@@ -1,0 +1,128 @@
+/* ==========================================================================
+   AgriSmart AI — Disease Detection Component Styles
+   AgroVerdant Editorial theme & precision diagnostic animations
+   ========================================================================== */
+
+:root {
+  --agri-primary: #1b4d3e;
+  --agri-primary-light: #2fa874;
+  --agri-tint: #ecfef3;
+  --agri-bg: #f6fbf8;
+  --agri-text: #16352d;
+  --agri-muted: #527d6a;
+  --agri-warning: #c48a20;
+  --agri-danger: #c95a5a;
+  --agri-border: #d3ebd9;
+}
+
+.font-editorial {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.shadow-editorial {
+  box-shadow: 0 10px 30px -5px rgba(27, 77, 62, 0.05), 0 2px 8px -2px rgba(27, 77, 62, 0.03);
+}
+
+.shadow-card-elevated {
+  box-shadow: 0 20px 40px -15px rgba(19, 58, 47, 0.08);
+}
+
+/* ── Scanning Laser Animation for Analysis Loader ── */
+@keyframes scanline {
+  0% {
+    top: 2%;
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 96%;
+    opacity: 0.6;
+  }
+}
+
+.animate-scanline {
+  animation: scanline 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+}
+
+@keyframes progressPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.animate-progress-pulse {
+  animation: progressPulse 1.8s ease-in-out infinite;
+}
+
+/* ── Legacy compatibility animations ── */
+@keyframes scanningBeam {
+  0% {
+    top: 0%;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    top: 96%;
+    opacity: 0.2;
+  }
+}
+
+.scanner-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #2fa874, #1b4d3e, #2fa874, transparent);
+  box-shadow: 0 0 12px rgba(47, 168, 116, 0.7);
+  animation: scanningBeam 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(47, 168, 116, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 18px rgba(47, 168, 116, 0);
+  }
+}
+
+.pulse-circle {
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.timeline-stem {
+  position: absolute;
+  top: 14px;
+  bottom: -14px;
+  left: 17px;
+  width: 2px;
+  background: #e2e8f0;
+}
+
+.timeline-item:last-child .timeline-stem {
+  display: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.disease-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.disease-card:hover {
+  transform: translateY(-1px);
+}
+
